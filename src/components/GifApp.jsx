@@ -6,14 +6,14 @@ import { SearchGif } from "./SearchGif"
 
 //functional component
 export const GifApp = () => {
-    const{gifs,handleGetGif} = useGif()
+    const{gifs,handleGetGif,catName} = useGif()
     
     return (
     //fragment
     <>
     { /*props: una propiedad que viaja entre componenetes*/}
         <SearchGif handleGetGif={handleGetGif}/>
-        <ContainerGif gifs={gifs}/>     
+        <ContainerGif gifs={gifs} catName={catName}/>     
           
         
     </>

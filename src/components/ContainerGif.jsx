@@ -1,10 +1,10 @@
 import React from 'react'
 
-export const ContainerGif = ({gifs,categoris}) => {
+export const ContainerGif = ({gifs,catName}) => {
     
   return (
     <>
-      <h1 className="text-center my-4 text-primary">{categoris}</h1>
+      <h1 className="text-center my-4 text-primary">{catName}</h1>
       <div className="container">
         <div className="row justify-content-center">
           {gifs.map(({ id, title, url }) => {

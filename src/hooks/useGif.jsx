@@ -3,6 +3,7 @@ import { reqGif } from '../services/gifs'
 
 export const useGif = () =>{
     const [gifs,setGifs] = useState([])
+    const[catName,setCatName] = useState('')
 
     const handleGetGif = (e, categori) =>{
         //evita la recarga completa del navegador
@@ -11,10 +12,13 @@ export const useGif = () =>{
         reqGif(categori).then((gifs) => {
             setGifs(gifs)
         })
+        
+        setCatName(categori)
     }
 
     return{
         gifs,
+        catName,
         handleGetGif
     }
 }

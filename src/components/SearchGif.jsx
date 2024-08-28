@@ -12,12 +12,6 @@ export const SearchGif = ({handleGetGif}) => {
                     <input type='submit' value={'Buscar'} className='btn btn-outline-secondary' />
                 </form>
             </div>
-
-            <div className="d-flex justify-content-center align-items-center mt-3 mb-4">
-                <h1 className="fw-light fs-2 text-primary">
-                {categori ? `Categoría: ${categori}` : " "}
-                </h1>
-            </div>
         </>
     )
 }
