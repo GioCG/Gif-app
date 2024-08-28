@@ -1,22 +1,21 @@
-import { useState } from "react"
+import { useState } from 'react'
+import { reqGif } from '../services/gifs'
 
 export const useGif = () =>{
-    const [gif,setGif] = useState('')
+    const [gifs,setGifs] = useState([])
 
-    const reqGif = async() =>{
-        await fetch('https://api.giphy.com/v1/gifs/random?api_key=Ox6apmQK51nlSuc2gMLL7kX87oeRd24P').then(async(resp) =>{
-            await resp.json().then(({data}) =>{
-                setGif(data.images.original.url)
-            })
-        }).catch(console.error)
-    }
+    const handleGetGif = (e, categori) =>{
+        //evita la recarga completa del navegador
+        e.preventDefault()
 
-    const handleGetGif = () =>{
-        reqGif()
+        reqGif(categori).then((gifs) => {
+            setGifs(gifs)
+        })
     }
 
     return{
-        gif,
+        gifs,
         handleGetGif
     }
 }
+
